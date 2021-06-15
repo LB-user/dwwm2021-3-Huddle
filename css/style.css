@@ -32,9 +32,39 @@ h2{
 }
 /*Layout*/
 .container {
-    max-width: 120rem;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+}
+@media screen and (min-width: 36em) { /* Indiquer les mesures en em avec une base de 16px - Ex : 576/16 = 36em*/
+    .container {
+        max-width: 53.6rem;
+    }
+}
+@media screen and (min-width: 48em) { /* eq 768px */
+    .container {
+        max-width: 72.8rem;
+    }
+
+    
+}
+
+@media screen and (min-width: 62em) { /* eq 992px */
+    .container {
+        max-width: 95.2rem;
+    }
+}
+
+@media screen and (min-width: 75em) { /* eq 1200px */
+    .container {
+        max-width: 116rem;
+    }
+}
+
+.container-narrower {
+    max-width: 42rem;
 }
 /*Header*/
 .site-header{
@@ -69,6 +99,7 @@ h2{
     background-position-y: -16rem;
     background-position-x: 50%;
     justify-content: center;
+    background-size: cover;
 }
 .sub-header{
     display: flex;
@@ -76,6 +107,13 @@ h2{
     padding-top: 16rem;
     padding-bottom: 7.1rem;
 }
+@media screen and (max-width: 62em) { /* eq 992px */
+    .container {
+        max-width: 95.2rem;
+        flex-wrap: wrap;
+    }
+}
+
 .hero-title{
     font-family: 'Poppins', sans-serif;
     font-size: 4rem;
@@ -99,6 +137,11 @@ h2{
     max-width: 52rem;
     min-height: 48.2rem;
 }
+@media screen and (max-width: 62em) { /* eq 992px */
+    .hero-article {
+        margin: auto;
+    }
+}
 /*main section*/
 .main-list-item{
     display: flex;
@@ -109,6 +152,18 @@ h2{
     border-radius: 16px;
     opacity: 1;
     margin-bottom: 4rem;
+}
+@media screen and (max-width: 62em) { /* eq 992px */
+    .left{
+        flex-direction: column;
+        padding-top: 1.6rem;
+        padding-bottom: 1.6rem;
+    }
+    .right{
+        flex-direction: column-reverse;
+        padding-top: 1.6rem;
+        padding-bottom: 1.6rem;
+    }
 }
 .text-div{
     align-items: center;
@@ -126,8 +181,6 @@ h2{
 /*ahead*/
 aside{
     display: flex;
-}
-.ready{
 }
 .aside-container{
     position:relative;
@@ -205,10 +258,11 @@ address{
 }
 .social{
     display: grid; 
+    
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr; 
     grid-template-rows: 1fr 1fr 1fr; 
-    grid-column-gap: 12.3rem;
+    grid-column-gap: 5rem;
     grid-row-gap: 2.5rem;
     grid-template-areas: 
     "about career"
@@ -216,9 +270,11 @@ address{
     "faq contact";
     padding-top: 7.95rem;
     font-size: 1.8rem;
+    
 }
 .links, .nav-social{
     margin-top: 7.5rem;
+    margin-left: 10rem;
 }
 .nav-social{
     display: flex;
@@ -249,11 +305,10 @@ address{
     
 }
 .copyright{
+    padding-top: 1.6rem;
     padding-bottom: 6.4rem;
     text-align: right;
     font-family: 'Poppins', sans-serif;
     font-size: 1.2rem;
 }
-@media  screen and (min-width: 1330px) {
-    
-}
+
